@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Dashboard</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <!--Leaflet-->
+    <!--Leaflet CSS-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+
+  <!--Leaflet JS-->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+
+  <script src="leaflet.sld.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="mystyle.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Navbar content -->
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Residential Masterplan of CA Area</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Projects</a>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Maps</a>
+                    </li>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" >About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" >Contacts</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" >Location</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+            <!-- Navbar content -->
+          </nav>
+        </div>
+      </div>
+      <div class="row border" style=height:auto>
+        <div class="col-md-3 border">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  Spatial Querry
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Use this filter for your customized spatial querries.</div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">Enter</span>
+                  <input type="text" class="form-control" placeholder="Plot No" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <button class="btn btn-outline-secondary" type="button">Select Block No</button>
+                  <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+                    <option selected>Choose...</option>
+                    <option value="1">Block-1</option>
+                    <option value="2">Block-2</option>
+                    <option value="3">Block-3</option>
+                  </select>
+                </div>
+                <div class="input-group mb-3">
+                  <button class="btn btn-outline-secondary" type="button">Select Landuse</button>
+                  <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+                    <option selected>Choose...</option>
+                    <option value="1">School</option>
+                    <option value="2">Home</option>
+                    <option value="3">Ground</option>
+                  </select>
+                </div>
+               
+                  <button type="button" class="btn btn-success">Submit</button>
+
+                  <br></br>
+                
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  Disclaimer
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">All information showing in the map are collected from various sources and all copyrights are preserved by Astikos Inc. Any Changes to the data is a punishable offense.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 border">
+          <div id="map"></div>
+		<script type="text/javascript">
+		
+
+		//Funtion to read GEOJSON data array returen from async await
+		function addGeojsonFeatureFunc(feature, layer){
+		layer.bindPopup("<b>"+feature.properties.landuse+"</b><br />"+
+		feature.properties.sqm+ " Square Meters");
+		}
+		
+		//Style Function
+		function styleFunction(feature){
+		return {
+		fillColor: "#ffffff",
+		fillOpacity: 0,
+		color: "#ffffff",
+		weight: 0,
+		};
+		}
+		
+		//Define Layer Group
+		var label = new L.featureGroup();
+		var masterplan = new L.featureGroup();
+		
+
+		
+		//Map attributes
+		var mapAttr="";
+		
+		//OSM B&W Tiles
+		var osmUrl=
+		"https://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png";
+		var osm = L.tileLayer(osmUrl, {attribution: mapAttr});
+		
+		//CartoDB Tiles
+		var cartodbUrl = 
+		"https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
+		var cartodb = L.tileLayer(cartodbUrl, {
+		attribution: mapAttr,
+		subdomains: "abcd",
+		maxZoom:19
+		});
+		
+		//ESRI Map tiles
+		var esriUrl =
+		"https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
+		var Esri_WorldImagery = L.tileLayer(esriUrl, {attribution:mapAttr});
+		
+		var mymap = L.map("map",{
+		zoom:13,
+		layers: [Esri_WorldImagery, masterplan]
+		}).setView([48.028794446601964, -80.26006272682113], 15.4); 
+		
+		
+		//Get GEOJSON Data from API 
+		async function getGeojson(){
+			try {
+			const response = await fetch ("./postgis2geojson.php");
+			return await response.json(); 
+			} catch(err) {
+			console.log(err);
+			}
+		}
+
+	// Add GEOJSON Layer in Leaflet
+	getGeojson().then(data => {
+	L.geoJSON([data], {
+	onEachFeature: addGeojsonFeatureFunc,
+	style: styleFunction
+	}).addTo(label);
+	});
+		
+		
+		
+		
+		//SLD TEST Plan
+		
+		var geoJsonPromise = fetch("./postgis2geojson.php");
+      var SLDPromise = fetch("./canada_style.sld");
+      Promise.all([geoJsonPromise, SLDPromise]).then(function(results) {
+         Promise.all([results[0].json(), results[1].text()])
+            .then(function(result) {
+               var geoJson = result[0];
+               var SLDText = result[1];
+               var SLDStyler = new L.SLDStyler(SLDText)
+               var geojsonLayer = L.geoJson(geoJson, {
+                  style: SLDStyler.getStyleFunction()			  
+               }).addTo(masterplan);
+         });
+      });
+	  
+
+	
+		//Base Layers 
+		var baseLayers = {
+		"CartoDB": cartodb,
+		"OSM MAP": osm,
+		"ESRI SAT": Esri_WorldImagery
+		};
+		
+		//Overlay Vector Layers
+		var overlays = {
+		"Feature Info": label,
+		"CA Masterplan": masterplan
+		};
+		
+		
+		
+		//Draw All Layers
+	var controlLayers = L.control.layers(baseLayers, overlays, {collapsed:false}).addTo(
+	mymap);
+		</script>
+        </div>
+        <div class="col-md-3 border">
+          <div class="data-table">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Id</th>
+                  <th scope="col">Landuse</th>
+                  <th scope="col">Area Sq.m</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>P10</td>
+                  <td>School</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>P15</td>
+                  <td>Home</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>P20</td>
+                  <td>Ground</td>
+                  <td>90</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="legend">
+            <img src="legend.png" class="rounded mx-auto d-block" alt="...">
+          </div>
+        </div>
+      </div>
+      <div class="row footer" style=height:15px>
+      <div class="col-md-12">
+        <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+          </ul>
+          <p class="text-center text-muted">© 2022 Astikos, Inc</p>
+        </footer>
+        </div>
+      </div>
+    </div>
+     
+  </body>
+
+</html>
