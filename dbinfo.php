@@ -6,8 +6,9 @@
 //$dbname = "test";
 
 //postgis server
-$remote_dbhost = "johnny.heliohost.org";
-$remote_dbuser = "mukul007_ju";
-$remote_dbpassword = "postgis";
-$remote_dbname = "mukul007_gis";
+$remote_dbhost = "mukul007-gis-mukul-gis.h.aivencloud.com";
+$remote_dbport = "16211";
+$remote_dbuser = "avnadmin";
+$remote_dbpassword = "AVNS_yDX9YJXKbBuFn74qM-T";
+$remote_dbname = "defaultdb";
 ?>
