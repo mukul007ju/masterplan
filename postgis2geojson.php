@@ -2,10 +2,13 @@
 require "./dbinfo.php";
 
 //connect to postgis using PDO
-$conn = new PDO("pgsql:host=".$remote_dbhost.";dbname=".$remote_dbname."","".$remote_dbuser."","".$remote_dbpassword."");
+$conn = new PDO("pgsql:host=".$remote_dbhost.";port=16211;dbname=".$remote_dbname, 
+                $remote_dbuser, 
+                $remote_dbpassword, 
+                [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
 //SQL Geo dbms
-$sql = "SELECT *, st_asgeojson(geom) AS geojson FROM ca_land_wgs84";
+$sql = "SELECT *, st_asgeojson(geom) AS geojson FROM canada_plot_wgs";
 
 $result = $conn->query($sql);
 
