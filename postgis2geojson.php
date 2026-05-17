@@ -2,7 +2,7 @@
 require "./dbinfo.php";
 
 //connect to postgis using PDO
-$conn = new PDO("pgsql:host=".$remote_dbhost.";port=16211;dbname=".$remote_dbname, 
+$conn = new PDO("pgsql:host=".$remote_dbhost.";port=6543;dbname=".$remote_dbname, 
                 $remote_dbuser, 
                 $remote_dbpassword, 
                 [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
